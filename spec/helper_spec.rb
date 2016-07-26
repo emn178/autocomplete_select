@@ -20,7 +20,7 @@ describe AutocompleteSelect::Helper do
 
       context "without options" do
         context "with html_options" do
-          subject { autocomplete_select_tag(:user_id, '/search', 1, nil, {:class => :user}) }
+          subject { autocomplete_select_tag(:user_id, '/search', 1, {}, {:class => :user}) }
           it { should eq "<input type=\"text\" name=\"user_id\" id=\"user_id\" value=\"1\" class=\"user\" data-autocomplete-select=\"{&quot;source&quot;:&quot;/search&quot;}\" />" }
         end
 

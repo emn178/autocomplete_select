@@ -1,11 +1,11 @@
 module AutocompleteSelect
   module Helper
     def autocomplete_select_options(path, label_or_options = nil, args)
-      unless label_or_options.is_a?(Hash) || label_or_options.nil?
+      if label_or_options.is_a?(Hash)
+        options = label_or_options
+      else
         label = label_or_options
         options = args.shift
-      else
-        options = label_or_options
       end
       html_options = args.shift || {}
 
