@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Chen, Yi-Cyuan"]
   s.email       = ["emn178@gmail.com"]
   s.homepage    = "https://github.com/emn178/autocomplete_select"
-  s.summary     = "Integrate with JavaScript autocomplete library to provide select by autocomplete input and form helper."
-  s.description = "Integrate with JavaScript autocomplete library to provide select by autocomplete input and form helper."
+  s.summary     = "Integrate with jQuery UI autocomplete library to provide select by autocomplete input and form helper."
+  s.description = "Integrate with jQuery UI autocomplete library to provide select by autocomplete input and form helper."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md", "CHANGELOG.md"]

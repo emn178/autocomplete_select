@@ -1,7 +1,7 @@
 (function ($) {
   $(document).on('ready page:load', function () {
     $('[data-autocomplete-select]').each(function () {
-      var element = $(this);
+      var element = $(this), label;
       var hidden = $('<input type="hidden"/>')
         .attr('name', element.attr('name'))
         .val(element.val())
@@ -15,13 +15,25 @@
           return false;
         },
         select: function( event, ui ) {
-          element.val( ui.item.label );
+          element.val( label = ui.item.label );
           hidden.val( ui.item.value );
           return false;
         }
       });
 
-      element.autocomplete(options).removeAttr('name');
+      element.autocomplete(options).removeAttr('name').blur(function () {
+        var value = element.val();
+        if (value) {
+          element.val(label);
+        } else {
+          label = '';
+          hidden.val('');
+        }
+      });
+      if (options.label) {
+        element.val(options.label);
+      }
+      label = element.val();
     });
   });
 })(jQuery);

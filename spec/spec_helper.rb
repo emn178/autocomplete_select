@@ -1,11 +1,12 @@
 require 'simplecov'
 require 'coveralls'
 
-# SimpleCov.add_filter "/spec/"
-# SimpleCov.add_filter "engine.rb"
+SimpleCov.add_filter "/spec/"
+SimpleCov.add_filter "engine.rb"
 
 if ENV["COVERAGE"]
-  SimpleCov.start 'rails'
+  # SimpleCov.start 'rails'
+  SimpleCov.start
 elsif ENV["COVERALLS"]
   SimpleCov.formatter = Coveralls::SimpleCov::Formatter
   Coveralls.wear!
@@ -30,6 +31,3 @@ end
 ActionView::Base.class_eval do
   include AutocompleteSelect::Helper
 end
-
-
-# include VirtualMails
